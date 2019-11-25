@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="m4_lorena_cuervo">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="context-root" value="m4_lorena_cuervo"/>
+        <property name="java-output-path" value="/m4_lorena_cuervo/bin"/>
+    </wb-module>
+</project-modules>
