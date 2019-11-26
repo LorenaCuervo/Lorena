@@ -1,11 +1,16 @@
 package com.telefonica.jee.model;
 import java.io.Serializable;
 
-import javax.persistence;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="USER")
-@NamedQuery(name="User.findAll", query="SELECT e FROM User u")
+@NamedQuery(name="User.findAll", query="SELECT u FROM User u")
 public class User  implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
