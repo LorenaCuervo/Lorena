@@ -20,7 +20,6 @@ public class LoginController extends HttpServlet {
      */
     public LoginController() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**

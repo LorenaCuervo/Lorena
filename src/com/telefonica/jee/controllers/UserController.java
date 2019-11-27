@@ -10,13 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.tomcat.jni.User;
 
-import com.telefonica.jee.dao.EmployeeDAO;
-import com.telefonica.jee.dao.EmployeeDAOImpl;
 import com.telefonica.jee.dao.UserDAO;
 import com.telefonica.jee.dao.UserDAOImpl;
-import com.telefonica.jee.model.Employee;
+import com.telefonica.jee.model.User;
 
 /**
  * Servlet implementation class UserController
@@ -83,7 +80,7 @@ public class UserController extends HttpServlet {
 		listUser(request, response);
 	}
 	
-private void getSingleEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+private void getSingleUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
 		String id = request.getParameter("id");
 		
@@ -96,13 +93,13 @@ private void getSingleEmployee(HttpServletRequest request, HttpServletResponse r
 		dispatcher.forward(request, response);
 	}
 
-	private void listEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private void listUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		List<User> theList = userDAO.get();
 		
 		request.setAttribute("list", theList);
 		
-		dispatcher = request.getRequestDispatcher("/views/employee-list.jsp");
+		dispatcher = request.getRequestDispatcher("/views/user-list.jsp");
 		
 		dispatcher.forward(request, response);
 	}
@@ -112,7 +109,8 @@ private void getSingleEmployee(HttpServletRequest request, HttpServletResponse r
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-String id = request.getParameter("id");
+		
+		String id = request.getParameter("id");
 		
 		User user = new User();
 		user.setName(request.getParameter("name"));
