@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 public class JPAUtil {
 	
-private static final EntityManagerFactory emFactory = Persistence.createEntityManagerFactory("servlets-userss");
+private static final EntityManagerFactory emFactory = Persistence.createEntityManagerFactory("servlets-users");
 	
 
 	public static EntityManager getEntityManager() {
