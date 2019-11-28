@@ -5,12 +5,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>User Directory</title>
+<title>Employee Directory</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
 </head>
 <body>
-
-<div class = "container">
+	
+	<div class = "container">
 		
 		<h1>User Directory</h1>
 		<hr/>
@@ -40,9 +41,9 @@
 					<td>${user.password}</td>
 					<td>${user.age}</td>
 					<td> 
-						<a href = "${pageContext.request.contextPath}/UserController?action=EDIT&id=${employee.id}">Edit</a> 
+						<a href = "${pageContext.request.contextPath}/UserController?action=EDIT&id=${user.id}">Edit</a> 
 						| 
-						<a href = "${pageContext.request.contextPath}/UserController?action=DELETE&id=${employee.id}">Delete</a> 
+						<a href = "${pageContext.request.contextPath}/UserController?action=DELETE&id=${user.id}">Delete</a> 
 					</td>
 				</tr>
 				
@@ -54,6 +55,5 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
 </body>
 </html>
