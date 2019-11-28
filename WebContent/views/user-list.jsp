@@ -40,9 +40,9 @@
 					<td>${user.password}</td>
 					<td>${user.age}</td>
 					<td> 
-						<a href = "${pageContext.request.contextPath}/UserController?action=EDIT&id=${employee.id}">Edit</a> 
+						<a href = "${pageContext.request.contextPath}/UserController?action=EDIT&id=${user.id}">Edit</a> 
 						| 
-						<a href = "${pageContext.request.contextPath}/UserController?action=DELETE&id=${employee.id}">Delete</a> 
+						<a href = "${pageContext.request.contextPath}/UserController?action=DELETE&id=${user.id}">Delete</a> 
 					</td>
 				</tr>
 				
