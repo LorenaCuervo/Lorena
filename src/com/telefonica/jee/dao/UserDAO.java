@@ -35,4 +35,12 @@ public interface UserDAO {
 	
 	boolean update(User user);
 
+	public boolean login(String email);
+
+	boolean login(String email, String password);
+
+	org.apache.tomcat.jni.User findByEmail(String email);
+
+
+
 }

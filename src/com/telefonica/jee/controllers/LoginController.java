@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.tomcat.jni.User;
 
 import com.telefonica.jee.dao.UserDAO;
+import com.telefonica.jee.dao.UserDAOImpl;
 import com.telefonica.jee.util.AppConstants;
 
 /**
@@ -20,7 +21,9 @@ import com.telefonica.jee.util.AppConstants;
  */
 @WebServlet(name = "LoginServlet", urlPatterns = { "/", "/login" })
 public class LoginController extends HttpServlet {
-	private static final long serialVersionUID = 1L;       
+	private static final long serialVersionUID = 1L;    
+	
+	UserDAO userDAO = new UserDAOImpl();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -57,7 +60,7 @@ public class LoginController extends HttpServlet {
 		}
 
 		HttpSession session = request.getSession(true);// create session
-		User user = UserDAO.findByEmail(email);
+		User user = userDAO.findByEmail(email);
 		session.setAttribute(AppConstants.SESSION_USER, user);
 		response.sendRedirect("todos");
 	}
@@ -79,5 +82,4 @@ public class LoginController extends HttpServlet {
 		}
 		return false;
 	}
-
 }

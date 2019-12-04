@@ -11,6 +11,11 @@ import com.telefonica.jee.util.JPAUtil;
 
 public class UserDAOImpl implements UserDAO {
 	
+	
+	private static final String FINDBYEMAIL = "SELECT u from User u WHERE u.email = :email";
+	public UserDAOImpl() {
+	}
+
 	EntityManager manager;
 
 	@Override
@@ -90,6 +95,35 @@ public class UserDAOImpl implements UserDAO {
 			e.printStackTrace();
 		}
 		return flag;
+	}
+	
+	@Override
+	public boolean login(String email, String password) {
+		
+		TypedQuery<Long> query = manager.createQuery(FINDBYEMAIL, Long.class);
+		query.setParameter("email", email);
+		query.setParameter("password", password);
+		Long numUsuario = query.getSingleResult();
+		System.out.println("Numero de usuarios con email y password: " + numUsuario);
+		if (numUsuario > 0) {
+			return true;
+		}
+		
+		return false;
+		
+		//return: numUsuario > 0;
+	}
+
+	@Override
+	public boolean login(String email) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public org.apache.tomcat.jni.User findByEmail(String email) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
